@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">KouveePetShoppers</string>
+    <string-array name="sort_options">
+        <item>None</item>
+        <item>Harga</item>
+        <item>Stok</item>
+    </string-array>
+</resources>
