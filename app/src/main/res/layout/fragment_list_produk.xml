@@ -46,13 +46,17 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0-9"
-                android:buttonTint="@drawable/custom_radio_button"/>
+                android:layout_marginRight="7dp"
+                android:text="A-Z"
+                android:buttonTint="@drawable/custom_radio_button"
+                android:id="@+id/sortAscending"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="9-0"
-                android:buttonTint="@drawable/custom_radio_button"/>
+                android:layout_marginRight="7dp"
+                android:text="Z-A"
+                android:buttonTint="@drawable/custom_radio_button"
+                android:id="@+id/sortDescending"/>
         </RadioGroup>
         <Spinner
             android:layout_width="105dp"

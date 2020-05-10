@@ -3,10 +3,12 @@ package com.example.kouveepetshoppers.produk;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,7 +31,7 @@ import java.util.List;
 public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHolder> implements Filterable {
     private Context context;
     private List<ProdukDAO> result;
-    private List<ProdukDAO> resultFiltered;
+    public List<ProdukDAO> resultFiltered;
 
     public ProdukAdapter(Context context, List<ProdukDAO> result){
         this.context = context;
@@ -51,6 +54,17 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHold
         System.out.println(resultFiltered.get(position).getNama()+" "+position);
         holder.nama.setText(produk.getNama());
         holder.harga.setText(Integer.toString(produk.getHarga()));
+        if(produk.getJumlah_stok()==0){
+            holder.jumlah_stok.setTextColor(Color.parseColor("#FF0000"));
+            holder.satuan.setTextColor(Color.parseColor("#FF0000"));
+            holder.textTersedia.setTextColor(Color.parseColor("#FF0000"));
+            holder.labelHabis.setVisibility(View.VISIBLE);
+        }else{
+            holder.jumlah_stok.setTextColor(ContextCompat.getColor(context, R.color.colorAccentGrey));
+            holder.satuan.setTextColor(ContextCompat.getColor(context, R.color.colorAccentGrey));
+            holder.textTersedia.setTextColor(ContextCompat.getColor(context, R.color.colorAccentGrey));
+            holder.labelHabis.setVisibility(View.INVISIBLE);
+        }
         holder.jumlah_stok.setText(String.valueOf(produk.getJumlah_stok()));
         holder.satuan.setText(produk.getSatuan());
 
@@ -110,8 +124,9 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHold
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        private TextView id_produk, nama, satuan, jumlah_stok, min_stok, harga;
+        private TextView nama, satuan, jumlah_stok, textTersedia, harga;
         private ImageView gambar;
+        private RelativeLayout labelHabis;
         private CardView parent;
 
         public MyViewHolder(@NonNull View itemView){
@@ -120,8 +135,10 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHold
             harga = itemView.findViewById(R.id.tvHargaProduk);
             jumlah_stok = itemView.findViewById(R.id.tvJumlahStokProduk);
             satuan = itemView.findViewById(R.id.tvSatuanProduk);
+            textTersedia = itemView.findViewById(R.id.textTersedia);
             gambar = itemView.findViewById(R.id.ivGambarProduk);
             parent = itemView.findViewById(R.id.ParentProduk);
+            labelHabis = itemView.findViewById(R.id.labelHabis);
         }
         public void onClick(View view) {
             Toast.makeText(context, "You touch me?", Toast.LENGTH_SHORT).show();
