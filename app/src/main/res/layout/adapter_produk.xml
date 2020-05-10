@@ -1,9 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_columnWeight="1"
+    android:layout_rowWeight="1"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".produk.ProdukAdapter">
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    android:layout_margin="3dp"
+    tools:context=".produk.ProdukAdapter"
+    android:id="@+id/ParentProduk">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="195dp"
+            android:src="@drawable/ic_image_black_24dp"
+            android:tint="@color/colorPrimaryGrey"
+            android:id="@+id/ivGambarProduk">
+        </ImageView>
+        <TextView
+            android:id="@+id/tvNamaProduk"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingHorizontal="10dp"
+            android:layout_marginTop="7dp"
+            android:text="Nama Produk"
+            android:textColor="@color/colorAccentBlack"
+            android:textSize="16dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textStyle="bold"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="2dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rp."
+                android:textColor="@color/colorAccentOrange"
+                android:textSize="13dp"/>
+            <TextView
+                android:id="@+id/tvHargaProduk"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="1000000"
+                android:textColor="@color/colorAccentOrange"
+                android:textSize="15dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            android:paddingBottom="7dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="2dp">
+            <TextView
+                android:id="@+id/tvJumlahStokProduk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="500"
+                android:textSize="11dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:textSize="11dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sak"
+                android:textSize="11dp"
+                android:id="@+id/tvSatuanProduk"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" tersedia"
+                android:textSize="11dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

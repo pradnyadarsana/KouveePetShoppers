@@ -20,6 +20,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding {
+        enabled = true
+    }
 
 }
 
@@ -32,4 +35,20 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.google.android.material:material:1.1.0'
+
+    //noinspection GradleCompatible
+    implementation 'com.android.support:recyclerview-v7:28.0.0' //recycleview
+    //noinspection GradleCompatible
+    implementation 'com.android.support:cardview-v7:28.0.0' //cardview
+
+    //for rest-api
+    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
+    //gson
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
+
+    //glide for image loading and caching
+    implementation 'com.github.bumptech.glide:glide:3.8.0'
+
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
 }
