@@ -13,12 +13,33 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <ImageView
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_image_black_24dp"
-                android:id="@+id/viewGambarProduk">
-            </ImageView>
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_image_black_24dp"
+                    android:id="@+id/viewGambarProduk">
+                </ImageView>
+                <RelativeLayout
+                    android:layout_width="100dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentStart="true"
+                    android:background="@drawable/ic_label_black_24dp"
+                    android:backgroundTint="#FF3300"
+                    android:id="@+id/labelHabisDetail">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="Habis "
+                        android:textSize="20dp"
+                        android:textColor="@color/colorPrimaryWhite"/>
+                </RelativeLayout>
+            </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -67,23 +88,28 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="500"
+                        android:textColor="@color/colorAccentGrey"
                         android:textSize="15dp" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=" "
+                        android:textColor="@color/colorAccentGrey"
                         android:textSize="15dp"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="sak"
                         android:textSize="15dp"
+                        android:textColor="@color/colorAccentGrey"
                         android:id="@+id/viewSatuanProduk"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=" tersedia"
-                        android:textSize="15dp"/>
+                        android:textColor="@color/colorAccentGrey"
+                        android:textSize="15dp"
+                        android:id="@+id/textViewTersedia"/>
                 </LinearLayout>
             </RelativeLayout>
         </LinearLayout>

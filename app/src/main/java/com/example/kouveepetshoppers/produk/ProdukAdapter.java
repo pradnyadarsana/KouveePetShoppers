@@ -54,7 +54,7 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHold
         System.out.println(resultFiltered.get(position).getNama()+" "+position);
         holder.nama.setText(produk.getNama());
         holder.harga.setText(Integer.toString(produk.getHarga()));
-        if(produk.getJumlah_stok()==0){
+        if(produk.getJumlah_stok()<=0){
             holder.jumlah_stok.setTextColor(Color.parseColor("#FF0000"));
             holder.satuan.setTextColor(Color.parseColor("#FF0000"));
             holder.textTersedia.setTextColor(Color.parseColor("#FF0000"));

@@ -28,6 +28,7 @@
             <RelativeLayout
                 android:layout_width="70dp"
                 android:layout_height="50dp"
+                android:layout_alignParentStart="true"
                 android:background="@drawable/ic_label_black_24dp"
                 android:backgroundTint="#FF3300"
                 android:id="@+id/labelHabis">

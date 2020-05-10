@@ -1,9 +1,13 @@
 package com.example.kouveepetshoppers.produk;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -12,8 +16,8 @@ import com.example.kouveepetshoppers.model.ProdukDAO;
 import com.google.gson.Gson;
 
 public class TampilDetailProdukActivity extends AppCompatActivity {
-    private TextView id_produk, nama, satuan, jumlah_stok, min_stok, harga, created_at, created_by,
-            modified_at, modified_by, delete_at, delete_by;
+    private RelativeLayout labelHabis;
+    private TextView nama, satuan, jumlah_stok, harga, textTersedia;
     private ImageView gambar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +34,20 @@ public class TampilDetailProdukActivity extends AppCompatActivity {
         jumlah_stok = findViewById(R.id.viewJumlahStokProduk);
         harga = findViewById(R.id.viewHargaProduk);
         gambar = findViewById(R.id.viewGambarProduk);
+        textTersedia = findViewById(R.id.textViewTersedia);
+        labelHabis = findViewById(R.id.labelHabisDetail);
+
+        if(produk.getJumlah_stok()<=0){
+            jumlah_stok.setTextColor(Color.parseColor("#FF0000"));
+            satuan.setTextColor(Color.parseColor("#FF0000"));
+            textTersedia.setTextColor(Color.parseColor("#FF0000"));
+            labelHabis.setVisibility(View.VISIBLE);
+        }else{
+            jumlah_stok.setTextColor(ContextCompat.getColor(this, R.color.colorAccentGrey));
+            satuan.setTextColor(ContextCompat.getColor(this, R.color.colorAccentGrey));
+            textTersedia.setTextColor(ContextCompat.getColor(this, R.color.colorAccentGrey));
+            labelHabis.setVisibility(View.INVISIBLE);
+        }
 
         setData(produk);
     }
