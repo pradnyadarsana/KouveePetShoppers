@@ -154,7 +154,8 @@ public class ListProdukFragment extends Fragment {
             public void onResponse(Call<GetProduk> call, Response<GetProduk> response) {
                 ListProduk.addAll(response.body().getListDataProduk());
                 //System.out.println(ListProduk.get(0).getNama());
-                adapterProduk.notifyDataSetChanged();
+                sortByIdDesc();
+                //adapterProduk.notifyDataSetChanged();
 //                Toast.makeText(getActivity(), "Welcome", Toast.LENGTH_SHORT).show();
             }
 
