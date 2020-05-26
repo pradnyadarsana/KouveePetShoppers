@@ -3,11 +3,212 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fffdd0"
     tools:context=".tentang.TentangFragment">
-    <TextView
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="20dp"
-        android:text="TENTANG KAMI"/>
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/textViewTentangKami"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="TENTANG KAMI"
+                android:textColor="@color/colorAccentBlack"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@+id/textViewTentangKami"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="#fffdd0"
+                android:src="@drawable/kouveepetshoplogo" />
+
+            <me.biubiubiu.justifytext.library.JustifyTextView
+                android:id="@+id/textIsi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/logo"
+                android:layout_gravity="center_vertical"
+                android:text="      Kouvee Petshop berdiri sejak tahun 2019. Perkembangan kemajuan teknologi menjadi salah satu alasan utama kami untuk menjadikan situs ini sebagai satu-satunya website resmi kami dalam melayani setiap customer atau pelanggan secara online."
+                android:textColor="@color/colorAccentBlack"
+                android:textSize="18dp" />
+
+            <me.biubiubiu.justifytext.library.JustifyTextView
+                android:id="@+id/textIsi2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textIsi"
+                android:text="      Di dalam pelayanan, kami selalu berusaha untuk bisa melayani kebutuhan anda dalam memenuhi segala macam kebutuhan yang anda perlukan untuk hewan peliharaan anda. Kami juga selalu siap memberikan informasi secara maksimal serta selalu menyediakan produk-produk yang terbaik di setiap kelasnya dengan aneka macam pilihan varian. Visi utama kami adalah untuk bisa mejadi pilihan utama anda dalam memenuhi segala macam kebutuhan hewan peliharaan anda, baik itu untuk perseorangan, ataupun lembaga."
+                android:textColor="@color/colorAccentBlack"
+                android:textSize="18dp" />
+
+            <me.biubiubiu.justifytext.library.JustifyTextView
+                android:id="@+id/textIsi3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textIsi2"
+                android:text="      Besar harapan kami kedepan yaitu untuk dapat terus maju dan berkembang dalam melayani kebutuhan peliharaan anda agar tetap sehat dan juga dapat terawat dengan baik."
+                android:textColor="@color/colorAccentBlack"
+                android:textSize="18dp" />
+
+            <LinearLayout
+                android:id="@+id/LayoutAgendaKami"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textIsi3"
+                android:layout_marginTop="25dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewAgendaKami"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:text="AGENDA KAMI"
+                    android:textColor="@color/colorAccentBlack"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="• 12/04 2020 - Berbagi makanan anjing gratis"
+                    android:textColor="@color/colorAccentBlack"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="• 15/05 2020 - Kelas fotografi untuk kucing"
+                    android:textColor="@color/colorAccentBlack"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="• 16/06 2020 - Kelas yoga untuk hewan"
+                    android:textColor="@color/colorAccentBlack"
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LayoutKontakKami"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/LayoutAgendaKami"
+                android:layout_marginTop="25dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewKontakKami"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:text="KONTAK KAMI"
+                    android:textColor="@color/colorAccentBlack"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="• Instagram: @kouveepetshop"
+                    android:textColor="@color/colorAccentBlack"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="• Facebook: @kouveepetshop"
+                    android:textColor="@color/colorAccentBlack"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="• Twitter: @kouveepetshop"
+                    android:textColor="@color/colorAccentBlack"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="• ☎: (0274) 357735"
+                    android:textColor="@color/colorAccentBlack"
+                    android:textSize="18dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LayoutCopyright"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/LayoutKontakKami"
+                android:layout_marginTop="25dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text=" Dibuat dengan cinta oleh Programmer"
+                    android:textColor="@color/colorAccentBlack"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="Kouvee Petshop 💘"
+                    android:textColor="@color/colorAccentBlack"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="©2020"
+                    android:textColor="@color/colorAccentBlack"
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
